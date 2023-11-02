@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --black: #1c1c1c;
+  --gray: gray;
+  --light: rgb(192, 192, 192);
+  --white: #fff;
+  --bt: blue;
+  --footer: black;
+}
+
+/* VERSION MOBILE */
+
+body {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "nav"
+    "main"
+    "footer";
+}
+
+nav {
+  grid-area: nav;
+  background-color: var(--footer);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0px;
+}
+
+nav ul li:hover {
+  cursor: pointer;
+  color: var(--light);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  transform: rotateY(360deg);
+  transition: 3s;
+  animation: gira 5s linear infinite;
+}
+
+@keyframes gira {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+main {
+  grid-area: main;
+  background-color: var(--black);
+  color: var(--light);
+}
+
+.principal {
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
+  overflow-y: scroll;
+  height: 80vh;
+  align-items: center;
+}
+
+.formulario {
+  background-color: var(--footer);
+  padding: 30px 20px;
+  margin-top: 40px;
+  align-items: center;
+  text-align: center;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="mail"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  width: 150px;
+  background-color: whitesmoke;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+input[type="submit"]:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid whitesmoke;
+  color: white;
+}
+
+label {
+  font-family: "Roboto", sans-serif;
+  color: white;
+  font-size: 21px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+  grid-area: footer;
+  background-color: var(--footer);
+  color: white;
+  text-align: center;
+}
+
+/* VERSION TABLET */
+
+@media screen and (min-width: 576px) {
+  body {
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "nav nav"
+      "main main"
+      "main main"
+      "footer footer";
+  }
+  nav {
+    align-items: center;
+    grid-area: nav;
+    background-color: var(--footer);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .principal {
+    display: grid;
+    height: 70vh;
+    grid-template-columns: auto auto;
+    justify-content: center;
+  }
+}
+
+/* VERSION ESCRITORIO */
+
+@media screen and (min-width: 992px) {
+  body {
+    grid-template-columns: 15% 85%;
+    grid-template-areas:
+      "nav main"
+      "nav main"
+      "nav main"
+      "footer main";
+  }
+
+  nav {
+    background-color: var(--footer);
+  }
+  .principal {
+    height: 100vh;
+    grid-template-columns: auto auto auto auto;
+  }
+
+  nav ul li {
+    margin: 10px;
+  }
+}
